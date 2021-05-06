@@ -1,6 +1,7 @@
 
 SELECT employees.emp_no, last_name, first_name, sex, salaries.salary FROM employees
-JOIN salaries ON employees.emp_no = salaries.emp_no;
+JOIN salaries ON employees.emp_no = salaries.emp_no
+ORDER BY emp_no;
 
 ---------------------------------------------------------
 
