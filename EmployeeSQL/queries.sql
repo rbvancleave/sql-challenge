@@ -13,15 +13,15 @@ ORDER BY hire_date;
 SELECT foo.dept_no,foo.dept_name, foo.emp_no, emp.last_name, emp.first_name 
 FROM (SELECT dept_manager.dept_no,departments.dept_name,emp_no FROM dept_manager
 JOIN departments ON departments.dept_no = dept_manager.dept_no) AS foo
-JOIN employees as emp ON emp.emp_no = foo.emp_no
+JOIN employees AS emp ON emp.emp_no = foo.emp_no
 ORDER BY dept_no;
 
 ---------------------------------------------------------
 
 SELECT foo.emp_no, foo.last_name, foo.first_name, dep.dept_name
-FROM (SELECT e.emp_no, e.last_name, e.first_name, d.dept_no FROM employees as e
-JOIN dept_emp as d on d.emp_no = e.emp_no) AS foo
-JOIN departments as dep on dep.dept_no = foo.dept_no
+FROM (SELECT e.emp_no, e.last_name, e.first_name, d.dept_no FROM employees AS e
+JOIN dept_emp AS d ON d.emp_no = e.emp_no) AS foo
+JOIN departments AS dep ON dep.dept_no = foo.dept_no
 ORDER BY emp_no;
 
 ---------------------------------------------------------
